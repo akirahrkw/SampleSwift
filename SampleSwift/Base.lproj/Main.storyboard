@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8152.3" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wvV-DB-wyj">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8124.4"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Index View Controller-->
+        <scene sceneID="4UI-iw-9d1">
+            <objects>
+                <tableViewController id="5e3-aR-w5L" userLabel="Index View Controller" customClass="IndexViewController" customModule="SampleSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="grY-CF-cQK">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="indexCell" id="kWR-Aj-Dpz" customClass="IndexViewCell" customModule="SampleSwift" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="86" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kWR-Aj-Dpz" id="bcQ-xF-cPI">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b3e-Wj-zUT">
+                                            <rect key="frame" x="20" y="11" width="22" height="22"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="22" id="8yr-uc-sCw"/>
+                                                <constraint firstAttribute="height" constant="22" id="SKZ-ql-a3Z"/>
+                                            </constraints>
+                                            <connections>
+                                                <action selector="infoButtonTapped" destination="kWR-Aj-Dpz" eventType="touchUpInside" id="fn8-21-d91"/>
+                                            </connections>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mOG-9M-MRk">
+                                            <rect key="frame" x="62" y="12" width="518" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="b3e-Wj-zUT" firstAttribute="leading" secondItem="bcQ-xF-cPI" secondAttribute="leadingMargin" constant="12" id="2Ts-cp-1gd"/>
+                                        <constraint firstItem="mOG-9M-MRk" firstAttribute="top" secondItem="bcQ-xF-cPI" secondAttribute="topMargin" constant="4" id="6vh-76-EUb"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="mOG-9M-MRk" secondAttribute="trailing" constant="12" id="aLD-7G-pJx"/>
+                                        <constraint firstItem="mOG-9M-MRk" firstAttribute="leading" secondItem="b3e-Wj-zUT" secondAttribute="trailing" constant="20" id="eis-cb-ZHj"/>
+                                        <constraint firstItem="b3e-Wj-zUT" firstAttribute="top" secondItem="bcQ-xF-cPI" secondAttribute="topMargin" constant="3" id="ilg-kL-1iS"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="titleLabel" destination="mOG-9M-MRk" id="qmL-Dj-BsX"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="delegate" destination="5e3-aR-w5L" id="ACc-FN-vsF"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="net-yi-05u"/>
+                    <connections>
+                        <segue destination="fMW-xY-YFU" kind="show" identifier="photoIndex" id="xtY-wf-6cY"/>
+                        <segue destination="mAG-eE-S2l" kind="custom" identifier="infoPopup" customClass="PopupSegue" customModule="SampleSwift" customModuleProvider="target" id="vtK-uv-6Q8"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ueL-LV-vk7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="331" y="305"/>
+        </scene>
+        <!--Popup View Controller-->
+        <scene sceneID="GsX-Wt-6UD">
+            <objects>
+                <viewController autoresizesArchivedViewToFullSize="NO" id="mAG-eE-S2l" customClass="PopupViewController" customModule="SampleSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GhG-DC-Unn"/>
+                        <viewControllerLayoutGuide type="bottom" id="2ZU-Vb-0AN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Zjt-5r-1qV">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9m-uG-vof">
+                                <rect key="frame" x="0.0" y="256" width="300" height="44"/>
+                                <color key="backgroundColor" red="0.93652101880000005" green="0.31670466089999999" blue="0.48194084990000002" alpha="1" colorSpace="deviceRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Close">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="close" destination="mAG-eE-S2l" eventType="touchUpInside" id="aTx-Vr-Nyp"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mcb-JY-FUy">
+                                <rect key="frame" x="0.0" y="50" width="300" height="160"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="300" height="300"/>
+                    <connections>
+                        <outlet property="textView" destination="Mcb-JY-FUy" id="vPK-z9-Gfh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p87-CW-Ob4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="895" y="305"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="L7N-VP-Wie">
+            <objects>
+                <navigationController id="wvV-DB-wyj" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VpN-OJ-Pez">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="5e3-aR-w5L" kind="relationship" relationship="rootViewController" id="MEK-db-1za"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vMg-4E-sxF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-489" y="305"/>
+        </scene>
+        <!--Photo-->
+        <scene sceneID="0gL-g9-y5s">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Photo" id="fMW-xY-YFU" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xLb-yv-WHk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="331.5" y="872"/>
+        </scene>
+    </scenes>
+</document>
