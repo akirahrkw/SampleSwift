@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E5877FEA1B622E610052C089 /* PhotoIndexCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5877FE91B622E610052C089 /* PhotoIndexCell.swift */; };
 		E5C4C6581B5A40730065CDE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C4C6571B5A40730065CDE1 /* AppDelegate.swift */; };
 		E5C4C65A1B5A40730065CDE1 /* IndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C4C6591B5A40730065CDE1 /* IndexViewController.swift */; };
 		E5C4C65D1B5A40730065CDE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5C4C65B1B5A40730065CDE1 /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E5877FE91B622E610052C089 /* PhotoIndexCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoIndexCell.swift; sourceTree = "<group>"; };
 		E5C4C6541B5A40730065CDE1 /* SampleSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5C4C6571B5A40730065CDE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5C4C6591B5A40730065CDE1 /* IndexViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			children = (
 				E5C4C68F1B5A457C0065CDE1 /* PhotoIndexViewController.swift */,
 				E5C4C69A1B5B66810065CDE1 /* Photo.storyboard */,
+				E5877FE91B622E610052C089 /* PhotoIndexCell.swift */,
 			);
 			path = photo;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				E5C4C69F1B5B712F0065CDE1 /* PopupSegue.swift in Sources */,
 				E5C4C6601B5A40730065CDE1 /* SampleSwift.xcdatamodeld in Sources */,
 				E5C4C6931B5A48C60065CDE1 /* TableViewDataSource.swift in Sources */,
+				E5877FEA1B622E610052C089 /* PhotoIndexCell.swift in Sources */,
 				E5C4C65A1B5A40730065CDE1 /* IndexViewController.swift in Sources */,
 				E5C4C6991B5A4BE50065CDE1 /* Information.swift in Sources */,
 				E5C4C6A11B5C05FA0065CDE1 /* PopupViewController.swift in Sources */,
@@ -465,6 +469,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SampleSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.akirahrkw.SampleSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -476,6 +481,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SampleSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.akirahrkw.SampleSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -549,6 +555,7 @@
 				E5C4C6811B5A40730065CDE1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E5C4C6821B5A40730065CDE1 /* Build configuration list for PBXNativeTarget "SampleSwiftTests" */ = {
 			isa = XCConfigurationList;
@@ -557,6 +564,7 @@
 				E5C4C6841B5A40730065CDE1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E5C4C6851B5A40730065CDE1 /* Build configuration list for PBXNativeTarget "SampleSwiftUITests" */ = {
 			isa = XCConfigurationList;
@@ -565,6 +573,7 @@
 				E5C4C6871B5A40730065CDE1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

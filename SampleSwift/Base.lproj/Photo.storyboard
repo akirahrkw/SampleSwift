@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8152.3" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iPm-4p-ocE">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8124.4"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Photo Index View Controller-->
@@ -13,13 +14,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="uTy-Qw-mcX">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="photoIndexCell" id="uTy-Qw-mcX" customClass="PhotoIndexCell" customModule="SampleSwift" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="86" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uTy-Qw-mcX" id="eD6-WD-jNG">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uXg-ey-ZGH">
+                                            <rect key="frame" x="20" y="11" width="547" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="uXg-ey-ZGH" secondAttribute="bottom" constant="3.5" id="0v4-bx-aCd"/>
+                                        <constraint firstItem="uXg-ey-ZGH" firstAttribute="top" secondItem="eD6-WD-jNG" secondAttribute="topMargin" constant="3" id="3cl-N6-8cq"/>
+                                        <constraint firstItem="uXg-ey-ZGH" firstAttribute="leading" secondItem="eD6-WD-jNG" secondAttribute="leadingMargin" constant="12" id="NSB-Zp-cnW"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="uXg-ey-ZGH" secondAttribute="trailing" constant="-8" id="wfj-77-wki"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="titleLabel" destination="uXg-ey-ZGH" id="Cqg-PJ-3Bs"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -27,7 +45,16 @@
                             <outlet property="delegate" destination="iPm-4p-ocE" id="v9K-9y-Sd6"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Bex-oy-yGe">
+                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="add" id="oci-ch-ik6">
+                            <connections>
+                                <action selector="addAlbum" destination="iPm-4p-ocE" id="ayt-dl-ig9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IgG-ld-bun" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

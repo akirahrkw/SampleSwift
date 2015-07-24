@@ -22,13 +22,28 @@ class SampleSwiftUITests: XCTestCase {
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+
         super.tearDown()
     }
-    
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+
+    func testPhoto() {
+        let tablesQuery = XCUIApplication().tables
+        tablesQuery.staticTexts["Photo Samples"].tap()
+        tablesQuery.staticTexts["Selfies"].tap()
     }
-    
+
+    func testCreatePhoto() {
+        let diceRoll = Int(arc4random_uniform(1000))
+        let text = "Test Album \(diceRoll)"
+
+        let app = XCUIApplication()
+        let tablesQuery = app.tables
+        tablesQuery.staticTexts["Photo Samples"].tap()
+        app.navigationBars["SampleSwift.PhotoIndexView"].buttons["Add"].tap()
+
+        let collectionViewsQuery = app.alerts["New Album"].collectionViews
+        collectionViewsQuery.textFields["Album Name"].typeText(text)
+        collectionViewsQuery.buttons["Create"].tap()
+        tablesQuery.staticTexts[text].tap()
+    }
 }

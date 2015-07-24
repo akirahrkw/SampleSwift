@@ -6,5 +6,14 @@ Xcode7 beta3, Swift2.0
 
 ## Samples
 
-new StoryBoard features
+Photos API
+ - Album List
+
+StoryBoard features
+ - Split storyboard
+
+UI Testing
+
+## TODO
+
 Custom Segue
