@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8152.3" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wvV-DB-wyj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8164.2" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wvV-DB-wyj">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8124.4"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8135.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -18,7 +18,7 @@
                                 <rect key="frame" x="0.0" y="86" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kWR-Aj-Dpz" id="bcQ-xF-cPI">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b3e-Wj-zUT">
@@ -59,6 +59,8 @@
                     <connections>
                         <segue destination="fMW-xY-YFU" kind="show" identifier="photoIndex" id="xtY-wf-6cY"/>
                         <segue destination="mAG-eE-S2l" kind="custom" identifier="infoPopup" customClass="PopupSegue" customModule="SampleSwift" customModuleProvider="target" id="vtK-uv-6Q8"/>
+                        <segue destination="ckx-CU-ijO" kind="presentation" identifier="imagePickerVideo" id="Zcy-tQ-o2z"/>
+                        <segue destination="oCR-xF-XVU" kind="presentation" identifier="avFoundationVideo" id="xse-9t-NCT"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ueL-LV-vk7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -132,6 +134,65 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xLb-yv-WHk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="331.5" y="872"/>
+        </scene>
+        <!--Custom Image Picker Controller-->
+        <scene sceneID="Kmw-4R-bUp">
+            <objects>
+                <navigationController id="ckx-CU-ijO" customClass="CustomImagePickerController" customModule="SampleSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yDH-MK-k63">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x4d-hB-aKg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="705" y="1055"/>
+        </scene>
+        <!--Video View Controller-->
+        <scene sceneID="fyP-43-OdG">
+            <objects>
+                <viewController id="oCR-xF-XVU" customClass="AVVideoViewController" customModule="SampleSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6wx-nl-LzQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="NHq-lG-ZqY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cpD-ip-YsA">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mzc-T2-ceY">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="ehR-km-kXT"/>
+                                    <barButtonItem title="Close" id="BCH-1T-atW">
+                                        <connections>
+                                            <action selector="close" destination="oCR-xF-XVU" id="p0n-IG-YLl"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="2SG-OJ-d1v"/>
+                                    <barButtonItem title="Record" id="w9f-mn-3Pm">
+                                        <connections>
+                                            <action selector="start" destination="oCR-xF-XVU" id="8Ob-pp-Nol"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="m1k-Db-w3T"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NHq-lG-ZqY" firstAttribute="top" secondItem="mzc-T2-ceY" secondAttribute="bottom" id="E4b-4J-6fk"/>
+                            <constraint firstItem="mzc-T2-ceY" firstAttribute="leading" secondItem="cpD-ip-YsA" secondAttribute="leadingMargin" constant="-20" id="QQL-7j-u4u"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mzc-T2-ceY" secondAttribute="trailing" constant="-20" id="ZSc-cI-aUE"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="recordButton" destination="w9f-mn-3Pm" id="ywa-0N-PrT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ccc-g1-38Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1347" y="1054"/>
         </scene>
     </scenes>
 </document>

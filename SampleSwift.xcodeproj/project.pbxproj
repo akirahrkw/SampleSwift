@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E53933B01B63771A0050479B /* UIImagePickerController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53933AF1B63771A0050479B /* UIImagePickerController+Extension.swift */; };
+		E53933B21B64E2820050479B /* CustomImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53933B11B64E2820050479B /* CustomImagePickerController.swift */; };
+		E55980491B678A3C009E4740 /* AVVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55980481B678A3C009E4740 /* AVVideoViewController.swift */; };
+		E559804C1B679270009E4740 /* Recorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E559804B1B679270009E4740 /* Recorder.swift */; };
+		E559804E1B67932D009E4740 /* BaseRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E559804D1B67932D009E4740 /* BaseRecorder.swift */; };
+		E55980501B679363009E4740 /* MovieFileOutputRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E559804F1B679363009E4740 /* MovieFileOutputRecorder.swift */; };
+		E55980521B679375009E4740 /* AssetWriterRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55980511B679375009E4740 /* AssetWriterRecorder.swift */; };
+		E55E78C91B6CD96400322FB3 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55E78C81B6CD96400322FB3 /* SessionManager.swift */; };
 		E5877FEA1B622E610052C089 /* PhotoIndexCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5877FE91B622E610052C089 /* PhotoIndexCell.swift */; };
 		E5C4C6581B5A40730065CDE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C4C6571B5A40730065CDE1 /* AppDelegate.swift */; };
 		E5C4C65A1B5A40730065CDE1 /* IndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C4C6591B5A40730065CDE1 /* IndexViewController.swift */; };
@@ -43,6 +51,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E53933AF1B63771A0050479B /* UIImagePickerController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImagePickerController+Extension.swift"; sourceTree = "<group>"; };
+		E53933B11B64E2820050479B /* CustomImagePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImagePickerController.swift; sourceTree = "<group>"; };
+		E55980481B678A3C009E4740 /* AVVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVVideoViewController.swift; sourceTree = "<group>"; };
+		E559804B1B679270009E4740 /* Recorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recorder.swift; sourceTree = "<group>"; };
+		E559804D1B67932D009E4740 /* BaseRecorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRecorder.swift; sourceTree = "<group>"; };
+		E559804F1B679363009E4740 /* MovieFileOutputRecorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieFileOutputRecorder.swift; sourceTree = "<group>"; };
+		E55980511B679375009E4740 /* AssetWriterRecorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetWriterRecorder.swift; sourceTree = "<group>"; };
+		E55E78C81B6CD96400322FB3 /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		E5877FE91B622E610052C089 /* PhotoIndexCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoIndexCell.swift; sourceTree = "<group>"; };
 		E5C4C6541B5A40730065CDE1 /* SampleSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5C4C6571B5A40730065CDE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +109,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E53933AE1B6376DC0050479B /* video */ = {
+			isa = PBXGroup;
+			children = (
+				E55E78C71B6CD69000322FB3 /* imagePicker */,
+				E559804A1B679256009E4740 /* recorder */,
+				E55E78C81B6CD96400322FB3 /* SessionManager.swift */,
+				E55980481B678A3C009E4740 /* AVVideoViewController.swift */,
+			);
+			path = video;
+			sourceTree = "<group>";
+		};
+		E559804A1B679256009E4740 /* recorder */ = {
+			isa = PBXGroup;
+			children = (
+				E559804B1B679270009E4740 /* Recorder.swift */,
+				E559804D1B67932D009E4740 /* BaseRecorder.swift */,
+				E559804F1B679363009E4740 /* MovieFileOutputRecorder.swift */,
+				E55980511B679375009E4740 /* AssetWriterRecorder.swift */,
+			);
+			name = recorder;
+			sourceTree = "<group>";
+		};
+		E55E78C71B6CD69000322FB3 /* imagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				E53933AF1B63771A0050479B /* UIImagePickerController+Extension.swift */,
+				E53933B11B64E2820050479B /* CustomImagePickerController.swift */,
+			);
+			name = imagePicker;
+			sourceTree = "<group>";
+		};
 		E5C4C64B1B5A40730065CDE1 = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +163,7 @@
 		E5C4C6561B5A40730065CDE1 /* SampleSwift */ = {
 			isa = PBXGroup;
 			children = (
+				E53933AE1B6376DC0050479B /* video */,
 				E5C4C6911B5A48540065CDE1 /* utils */,
 				E5C4C6941B5A4A1F0065CDE1 /* index */,
 				E5C4C68A1B5A45100065CDE1 /* photo */,
@@ -309,16 +357,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E53933B21B64E2820050479B /* CustomImagePickerController.swift in Sources */,
+				E53933B01B63771A0050479B /* UIImagePickerController+Extension.swift in Sources */,
+				E55E78C91B6CD96400322FB3 /* SessionManager.swift in Sources */,
 				E5C4C69F1B5B712F0065CDE1 /* PopupSegue.swift in Sources */,
 				E5C4C6601B5A40730065CDE1 /* SampleSwift.xcdatamodeld in Sources */,
 				E5C4C6931B5A48C60065CDE1 /* TableViewDataSource.swift in Sources */,
+				E559804C1B679270009E4740 /* Recorder.swift in Sources */,
 				E5877FEA1B622E610052C089 /* PhotoIndexCell.swift in Sources */,
+				E55980491B678A3C009E4740 /* AVVideoViewController.swift in Sources */,
 				E5C4C65A1B5A40730065CDE1 /* IndexViewController.swift in Sources */,
 				E5C4C6991B5A4BE50065CDE1 /* Information.swift in Sources */,
 				E5C4C6A11B5C05FA0065CDE1 /* PopupViewController.swift in Sources */,
+				E55980521B679375009E4740 /* AssetWriterRecorder.swift in Sources */,
 				E5C4C6901B5A457C0065CDE1 /* PhotoIndexViewController.swift in Sources */,
+				E559804E1B67932D009E4740 /* BaseRecorder.swift in Sources */,
 				E5C4C6581B5A40730065CDE1 /* AppDelegate.swift in Sources */,
 				E5C4C6971B5A4A6D0065CDE1 /* IndexViewCell.swift in Sources */,
+				E55980501B679363009E4740 /* MovieFileOutputRecorder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
